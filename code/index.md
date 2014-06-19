@@ -7,7 +7,6 @@ layout: page
 		$('#nav3').addClass('active');
 	});
 </script>
-<div>
 {% for post in site.categories.code %}
 <div>
 	<a class="page-title" href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" target="_blank">{{ post.title }}</a>
@@ -17,4 +16,3 @@ layout: page
 	</div>
 </div>
 {% endfor %}
-</div>
