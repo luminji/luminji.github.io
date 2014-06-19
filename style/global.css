@@ -1,0 +1,29 @@
+body {
+	font-family: 'Microsoft YaHei UI','Microsoft YaHei',DengXian,SimSun,'Segoe UI',Tahoma,Helvetica,sans-serif;
+	font-size: 16px;
+}
+
+.post-title{
+	color: #990033;
+}
+
+.post-description{
+	margin-top: 10px;
+	text-indent: 2em;
+}
+
+.post-time-line{
+	border-top:1px dashed #e8e7d0;
+	margin-top: 15px;
+	padding-top: 10px;
+	text-align: right;
+}
+
+.post-content{
+	margin-top: 30px;
+}
+
+.content{
+	margin-top: 20px;
+	padding: 10px;
+}
