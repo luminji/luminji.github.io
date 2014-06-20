@@ -1,6 +1,7 @@
 markdown: kramdown
-title: 王文壮的主页
 permalink: /:year/:month/:day/:title/
 url: http://blog.wangwenzhuang.com
 author: 王文壮
 encoding: utf-8
+paginate: 20
+paginate_path: "page:num"

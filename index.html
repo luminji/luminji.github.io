@@ -1,36 +1,41 @@
 ---
-title: 王文壮的主页
+title: 王文壮的博客
 layout: page
 ---
 <script type="text/javascript">
-  $(function () {
-    $('#nav1').addClass('active');
-  });
+	$(function () {
+		$('#nav1').addClass('active');
+	});
 </script>
-<div class="about-box">
-	<div class="about-headPortrait">
-		<img src="/images/716EC694-3296-4100-9DC4-A79BEA0F38ED.png" class="img-thumbnail" height="250" width="330" />
+{% for post in paginator.posts %}
+	<div>
+		<a class="page-title" href="{{ post.url }}" title="{{ post.title }}" target="_blank">{{ post.title }}</a>
+		<p class="page-description">{{ post.description }}...<a class="page-more" href="{{ post.url }}" target="_blank">阅读全文</a></p>
+		<div class="page-time-line">
+			<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+		</div>
 	</div>
-	<div class="about-line"></div>
-	<div class="about-content">
-		<p>姓名：王文壮</p>
-		<p>所在城市：北京</p>
-		<p>Email：<small>1020304029@qq.com</small></p>
-		<p class="about-count">
-			<span>您是第</span>
-			<!-- GoStats Simple HTML Based Code -->
-			<a target="_blank" href="http://gostats.cn">
-				<img src="http://monster.gostats.cn/bin/count/a_472996/t_7/i_3/z_0/show_visitors/counter.png" style="border-width:0" />
-			</a>
-			<span>位访问者，欢迎您！</span>
-		</p>
-		<div class="about-line"></div>
-		<p class="about-introduction">
-			80后，没前途的胖纸一枚。曾经也瘦过，自从踏上攻城师这条不归路，体重就噌噌的往上涨。。。喜欢一个人骑行出去旅行，最远的一次从北京骑到青岛。
-		</p>
-		<div class="about-line"></div>
-		<p class="about-skills">
-			热爱编程，4年 .Net 平台开发经验，目前从事 Web 开发工作。精通 C# 语言。熟悉主流前端框架如：jQuery、Easy UI、Bootstrap、jQuery Mobile UI等。偶尔关注并研究 Objective-C、Python、PHP、MySql。
-		</p>
-	</div>
+{% endfor %}
+<div class="page-pagination">
+	{% if paginator.previous_page %}
+		<a href="/" class="page-paginator-nav">首页</a>&nbsp;&nbsp;
+		{% if paginator.previous_page ==1 %}
+			<a href="/" class="page-paginator-nav">&lt;&lt;上一页</a>
+		{% else %}
+			<a href="/page{{ paginator.previous_page }}" class="page-paginator-nav">&lt;&lt;上一页</a>
+		{% endif %}
+	{% else %}
+		<span class="page-paginator-disable">首页</span>
+		&nbsp;&nbsp;<span class="page-paginator-disable">&lt;&lt;上一页</span>
+	{% endif %}
+
+	&nbsp;&nbsp;第<span class="page-paginator-number">{{ paginator.page }}</span>页&nbsp;/&nbsp;共<span class="page-paginator-number">{{ paginator.total_pages }}</span>页&nbsp;&nbsp;
+
+	{% if paginator.next_page %}
+		<a href="/page{{ paginator.next_page }}" class="page-paginator-nav">下一页&gt;&gt;</a>&nbsp;&nbsp;
+		<a href="/page{{ paginator.total_pages }}" class="page-paginator-nav">末页</a>
+	{% else %}
+		<span class="page-paginator-disable">下一页&gt;&gt;</span>
+		&nbsp;&nbsp;<span class="page-paginator-disable">末页</span>
+	{% endif %}
 </div>
