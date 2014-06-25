@@ -17,7 +17,19 @@
         <li><a href="http://jekyllrb.com">Jekyll</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li id='nav3'><a href="/about/">关于</a></li>
+        <li id='nav3'><a href="/about/">关于</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+      </li>
       </ul>
     </div>
   </div>
