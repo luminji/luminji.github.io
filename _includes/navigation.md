@@ -20,8 +20,8 @@
         <li id='nav3'><a href="/about/">关于</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接<b class="caret"></b></a>
-          <ul class="dropdown-menu nav-dropdown-menu">
-            <li class="nav-dropdown-menu-yqlj"><a href="http://cnblogs.com/luminji" target="_blank">陆敏技的博客</a></li>
+          <ul class="dropdown-menu">
+            <li><a href="http://cnblogs.com/luminji" target="_blank">陆敏技的博客</a></li>
           </ul>
       </li>
       </ul>
