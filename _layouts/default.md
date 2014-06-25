@@ -19,9 +19,7 @@
     <div>
       {% include navigation.md %}
     </div>
-    <div class="container content">
-      {{ content }}
-    </div>
+    {{ content }}
     <div class="container footer">
       {% include footer.md %}
     </div>

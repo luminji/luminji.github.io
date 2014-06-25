@@ -7,31 +7,33 @@ layout: page
 		$('#nav1').addClass('active');
 	});
 </script>
-{% for post in paginator.posts %}
-	<div>
-		<a class="page-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-		<p class="page-description">{{ post.description }}...<a class="page-more" href="{{ post.url }}">阅读全文</a></p>
-		<div class="page-time-line">
-			<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+<div class="container content">
+	{% for post in paginator.posts %}
+		<div>
+			<a class="page-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+			<p class="page-description">{{ post.description }}...<a class="page-more" href="{{ post.url }}">阅读全文</a></p>
+			<div class="page-time-line">
+				<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+			</div>
 		</div>
-	</div>
-{% endfor %}
-<div class="page-pagination">
-	{% if paginator.previous_page %}
-		{% if paginator.previous_page ==1 %}
-			<a href="/" class="page-paginator-nav">&lt;&lt;上一页</a>
+	{% endfor %}
+	<div class="page-pagination">
+		{% if paginator.previous_page %}
+			{% if paginator.previous_page ==1 %}
+				<a href="/" class="page-paginator-nav">&lt;&lt;上一页</a>
+			{% else %}
+				<a href="/page{{ paginator.previous_page }}" class="page-paginator-nav">&lt;&lt;上一页</a>
+			{% endif %}
 		{% else %}
-			<a href="/page{{ paginator.previous_page }}" class="page-paginator-nav">&lt;&lt;上一页</a>
+			&nbsp;&nbsp;<span class="page-paginator-disable">&lt;&lt;上一页</span>
 		{% endif %}
-	{% else %}
-		&nbsp;&nbsp;<span class="page-paginator-disable">&lt;&lt;上一页</span>
-	{% endif %}
 
-	&nbsp;&nbsp;第<span class="page-paginator-number">{{ paginator.page }}</span>页&nbsp;/&nbsp;共<span class="page-paginator-number">{{ paginator.total_pages }}</span>页&nbsp;&nbsp;
+		&nbsp;&nbsp;第<span class="page-paginator-number">{{ paginator.page }}</span>页&nbsp;/&nbsp;共<span class="page-paginator-number">{{ paginator.total_pages }}</span>页&nbsp;&nbsp;
 
-	{% if paginator.next_page %}
-		<a href="/page{{ paginator.next_page }}" class="page-paginator-nav">下一页&gt;&gt;</a>&nbsp;&nbsp;
-	{% else %}
-		<span class="page-paginator-disable">下一页&gt;&gt;</span>
-	{% endif %}
+		{% if paginator.next_page %}
+			<a href="/page{{ paginator.next_page }}" class="page-paginator-nav">下一页&gt;&gt;</a>&nbsp;&nbsp;
+		{% else %}
+			<span class="page-paginator-disable">下一页&gt;&gt;</span>
+		{% endif %}
+	</div>
 </div>
