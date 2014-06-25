@@ -17,7 +17,7 @@
         <li><a href="http://jekyllrb.com">Jekyll</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li id='nav2'><a href="/about/">关于</a></li>
+      <li id='nav3'><a href="/about/">关于</a></li>
       </ul>
     </div>
   </div>
