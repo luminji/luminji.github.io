@@ -1,4 +1,4 @@
-<nav class="navbar navbar-static-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -20,7 +20,7 @@
         <li id='nav3'><a href="/about/">关于</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接<b class="caret"></b></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu-inverse">
             <li><a href="http://cnblogs.com/luminji">陆敏技的博客</a></li>
           </ul>
       </li>
