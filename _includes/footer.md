@@ -1,1 +1,2 @@
 <p>&copy;&nbsp;Copyright 2014 - {{site.time | date:"%Y"}}&nbsp;{{ site.author }}</p>
+<p><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3431972'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D3431972%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></p>
