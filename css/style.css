@@ -90,16 +90,3 @@ body {
 .about-skills{
 	text-indent: 2em;
 }
-
-/*nav*/
-.nav-dropdown-menu{
-	background-color: #222;
-}
-.nav-dropdown-menu-yqlj{
-}
-.nav-dropdown-menu-yqlj a{
-	color: #999;
-}
-.nav-dropdown-menu-yqlj a:hover{
-	color: #fff;
-}
