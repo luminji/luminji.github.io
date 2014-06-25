@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }}</title>
-    <link rel="fluid-icon" href="/fluidicon.png" title="GitHub" />
+    <link rel="fluid-icon" href="/fluidicon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" />
