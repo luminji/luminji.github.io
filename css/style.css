@@ -42,7 +42,8 @@ body {
 }
 	.post-content h1,
 	.post-content h2,
-	.post-content h3{
+	.post-content h3,
+	.post-content h4{
 		background-color: gray;
 		padding: 10px 20px;
 		color: #F8F8F8;
