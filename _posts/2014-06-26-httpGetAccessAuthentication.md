@@ -22,7 +22,7 @@ tags: []
 
 接口定义
 
-	[config] brush:csharp; first-line:10; highlight:[11,12]
+	{% highlight csharp %}
     [HttpGet]
     /*
      * signature：签名结果
@@ -48,7 +48,8 @@ tags: []
         }
         return result;
     }
-
+	{% endhighlight %}
+	
     private bool CheckTimeOut(string timestamp)
     {
         var result = default(bool);
