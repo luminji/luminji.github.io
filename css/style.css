@@ -53,9 +53,8 @@ body {
 	color: #990033;
 }
 .post-time-line-tag{
-	margin:0px;
-	border:1px;
-	border-color:#00f;
+	padding: 0px 2px;
+	border: 1px solid #E7A466;
 	color: #990033;
 }
 .page-pagination{
