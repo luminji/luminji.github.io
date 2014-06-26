@@ -38,12 +38,14 @@ body {
 	color: #7b7368;
 }
 .post-content{
-	margin-top: 30px;
+	margin-top: 15px;
 }
 	.post-content h1,
 	.post-content h2,
 	.post-content h3{
 		background-color: gray;
+		padding: 10px 20px;
+		color: #F8F8F8;
 	}
 
 /*page*/
