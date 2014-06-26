@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "HTTP GET 方法的简单访问效验"
-description: ""
+description: "自定义一套签名算法，接口和请求者使用签名算法一致，并使用一致的 token。请求接口时将签名结果作为必要参数，接口收到请求效验签名合法性。"
 category: Web
-tags: []
+tags: ["HTTPGET效验"]
 ---
 
 ### 情景 ###
@@ -19,7 +19,61 @@ tags: []
 
 ### 代码 ###
 
-    // 
+**公用的生成签名类**
+
+    public sealed class SignatureHelper
+    {
+        /*
+         * 必备参数：token、时间戳、随机数（9位）
+         * 生成规则：对参数进行排序生成sha1哈希（不带符号）
+         * 
+         * 2014/5/4
+         * 
+         * 王文壮
+         */
+        /// <summary>
+        /// 生成签名
+        /// </summary>
+        public static string CreateSignature(Array array)
+        {
+            Array.Sort(array);
+            string tmpStr = string.Empty;
+            foreach (var tmp in array)
+            {
+                tmpStr += tmp;
+            }
+            return BitConverter.ToString(new SHA1CryptoServiceProvider().ComputeHash(new ASCIIEncoding().GetBytes(tmpStr))).Replace("-", string.Empty).ToLower();
+        }
+
+        /// <summary>
+        /// 生成时间戳
+        /// 规则：1970年1月1日至今的间隔秒数
+        /// </summary>
+        public static string CreateTimestamp()
+        {
+            return ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds).ToString();
+        }
+
+        /// <summary>
+        /// 创建9位随机数
+        /// </summary>
+        public static string CreateRandomNumber()
+        {
+            return new Random().Next(100000000, 999999999).ToString();
+        }
+        
+        /// <summary>
+        /// 效验签名
+        /// </summary>
+        public static bool CheckSignature(string token, string signature, string timestamp, string nonce)
+        {
+            string[] tempArr = { token, timestamp, nonce };
+            var tmpStr = SignatureHelper.CreateSignature(tempArr);
+            return tmpStr.Equals(signature);
+        }
+    }
+
+**接口定义**
 
     [HttpGet]
     /*
@@ -38,7 +92,7 @@ tags: []
             if (CheckTimeOut(timestamp))
             {
                 // 检测签名的合法性
-                if (CheckSignature(token, signature, timestamp, nonce))
+                if (SignatureHelper.CheckSignature(token, signature, timestamp, nonce))
                 {
                     result = "我是测试数据";
                 }
@@ -46,7 +100,6 @@ tags: []
         }
         return result;
     }
-	{% endhighlight %}
 	
     private bool CheckTimeOut(string timestamp)
     {
@@ -73,24 +126,18 @@ tags: []
         return result;
     }
 
-接口定义
+**请求**
 
-	[config] brush:csharp; first-line:10; highlight:[11,12]
-    [HttpGet]
-    public string GetData(string signature, string timestamp, string nonce)
+    /*
+     * url：签名结果
+     * timestamp：时间戳
+     * nonce：随机字符串
+     */
+    public static string TestGetData()
     {
-        var result = string.Empty;
-        var token = "wangwenzhuang";
-        if (!string.IsNullOrEmpty(token))
-        {
-            // 可以检测时间是否超时
-            if (CheckTimeOut(timestamp))
-            {
-                if (CheckSignature(token, signature, timestamp, nonce))
-                {
-                    result = "我是测试数据";
-                }
-            }
-        }
-        return result;
+        var timestamp = SignatureHelper.CreateTimestamp();
+        var nonce = SignatureHelper.CreateRandomNumber();
+        var signature = SignatureHelper.CreateSignature(new string[] { "wangwenzhuang", timestamp, nonce });
+        var url = string.Format("/GetData?signature={0}&timestamp={1}&nonce={2}", signature, timestamp, nonce);
+        // 请求代码...
     }
