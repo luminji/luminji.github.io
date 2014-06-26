@@ -52,6 +52,10 @@ body {
 .post-time-line-categories{
 	color: #990033;
 }
+.post-time-line-tag{
+	margin:0px;border:1px;background:#ff0000;border-color:#00f
+	color: #990033;
+}
 .page-pagination{
 	margin-top: 20px;
 	text-align: center;
