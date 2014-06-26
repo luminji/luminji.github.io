@@ -12,9 +12,9 @@ layout: default
 	{{ content }}
 	</div>
 	<div class="post-time-line">
-		分类：<span class="post-time-line-categories">{{ post.categories }}</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+		分类：<span class="post-time-line-categories">{{ page.categories }}</span>&nbsp;&nbsp;|&nbsp;&nbsp;
 		标签：
-		{% for tag in post.tags %}
+		{% for tag in page.tags %}
 			<span class="post-time-line-tag">{{ tag }}</span>
 		{% endfor %}
 		&nbsp;&nbsp;|&nbsp;&nbsp;
