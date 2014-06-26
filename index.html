@@ -17,6 +17,7 @@ layout: page
 				标签：
 				{% for tag in page.tags %}
 					<span>{{ tag }}</span>
+				{% endfor %}
 				&nbsp;&nbsp;|&nbsp;&nbsp;
 				<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
 			</div>
