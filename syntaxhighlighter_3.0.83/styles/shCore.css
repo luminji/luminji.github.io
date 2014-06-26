@@ -119,6 +119,7 @@
   position: static !important;
   width: auto !important;
   height: auto !important;
+  display:none;
 }
 .syntaxhighlighter.collapsed .toolbar span {
   display: inline !important;

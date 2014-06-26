@@ -44,7 +44,11 @@ tags: ["HTTPGET效验"]
             {
                 tmpStr += tmp;
             }
-            return BitConverter.ToString(new SHA1CryptoServiceProvider().ComputeHash(new ASCIIEncoding().GetBytes(tmpStr))).Replace("-", string.Empty).ToLower();
+            return BitConverter.ToString(
+                new SHA1CryptoServiceProvider().ComputeHash(
+                    new ASCIIEncoding().GetBytes(tmpStr)
+                )
+            ).Replace("-", string.Empty).ToLower();
         }
 
         /// <summary>
@@ -53,7 +57,9 @@ tags: ["HTTPGET效验"]
         /// </summary>
         public static string CreateTimestamp()
         {
-            return ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds).ToString();
+            return ((int)DateTime.Now.Subtract(
+                new DateTime(1970, 1, 1)).TotalSeconds
+            ).ToString();
         }
 
         /// <summary>
@@ -67,7 +73,11 @@ tags: ["HTTPGET效验"]
         /// <summary>
         /// 效验签名
         /// </summary>
-        public static bool CheckSignature(string token, string signature, string timestamp, string nonce)
+        public static bool CheckSignature(
+            string token, 
+            string signature, 
+            string timestamp, 
+            string nonce)
         {
             string[] tempArr = { token, timestamp, nonce };
             var tmpStr = SignatureHelper.CreateSignature(tempArr);
@@ -90,13 +100,18 @@ tags: ["HTTPGET效验"]
     {
         var result = string.Empty;
         var token = "wangwenzhuang";
-        if (!string.IsNullOrEmpty(signature) && !string.IsNullOrEmpty(timestamp) && !string.IsNullOrEmpty(nonce))
+        if (!string.IsNullOrEmpty(signature) 
+            && !string.IsNullOrEmpty(timestamp) 
+            && !string.IsNullOrEmpty(nonce))
         {
             // 可以检测时间是否超时
             if (CheckTimeOut(timestamp))
             {
                 // 检测签名的合法性
-                if (SignatureHelper.CheckSignature(token, signature, timestamp, nonce))
+                if (SignatureHelper.CheckSignature(
+                    token, 
+                    signature, 
+                    timestamp, nonce))
                 {
                     result = "我是测试数据";
                 }
@@ -143,8 +158,13 @@ tags: ["HTTPGET效验"]
     {
         var timestamp = SignatureHelper.CreateTimestamp();
         var nonce = SignatureHelper.CreateRandomNumber();
-        var signature = SignatureHelper.CreateSignature(new string[] { "wangwenzhuang", timestamp, nonce });
-        var url = string.Format("/GetData?signature={0}&timestamp={1}&nonce={2}", signature, timestamp, nonce);
+        var signature = SignatureHelper.CreateSignature(
+            new string[] { "wangwenzhuang", timestamp, nonce });
+        var url = string.Format(
+            "/GetData?signature={0}&timestamp={1}&nonce={2}", 
+            signature, 
+            timestamp, 
+            nonce);
         // 请求代码...
     }
 </pre>
