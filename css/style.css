@@ -1,7 +1,7 @@
 /*global*/ 
 body {
 	font-family: 'Microsoft YaHei UI','Microsoft YaHei',DengXian,SimSun,'Segoe UI',Tahoma,Helvetica,sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 }
 .content{
 	margin-top: 20px;
@@ -16,6 +16,10 @@ body {
 /*post*/ 
 .post-title{
 	color: #990033;
+}
+.post-title-line{
+	border-top:1px dashed #e8e7d0;
+	margin-top: 15px;
 }
 .post-time-line{
 	border-top:1px dashed #e8e7d0;
@@ -36,7 +40,9 @@ body {
 .post-content{
 	margin-top: 30px;
 }
-	.post-content h1 h2 h3{
+	.post-content h1,
+	.post-content h2,
+	.post-content h3{
 		background-color: gray;
 	}
 

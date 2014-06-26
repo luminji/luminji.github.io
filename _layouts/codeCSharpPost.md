@@ -31,6 +31,7 @@
     </div>
     	<div class="container content">
 			<h3 class="post-title">{{ page.title }}</h3>
+      <div class="post-title-line"></div>
 			<div class="post-content">
 			{{ content }}
 			</div>
