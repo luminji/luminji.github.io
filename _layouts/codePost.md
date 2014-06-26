@@ -27,6 +27,7 @@
 			$('#nav1').addClass('active');
 		});
 		SyntaxHighlighter.all();
+		SyntaxHighlighter.defaults['toolbar'] = false;
 	</script>
   </head>
   <body>
