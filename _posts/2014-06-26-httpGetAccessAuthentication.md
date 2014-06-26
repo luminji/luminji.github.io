@@ -22,10 +22,34 @@ tags: []
 
 接口定义
 
-	{% highlight python %}
-    print('dddd')
+	{% highlight csharp %}
+    [HttpGet]
+    /*
+     * signature：签名结果
+     * timestamp：时间戳
+     * nonce：随机字符串
+     */
+    [HttpGet]
+    public string GetData(string signature, string timestamp, string nonce)
+    {
+        var result = string.Empty;
+        var token = "wangwenzhuang";
+        if (!string.IsNullOrEmpty(signature) && !string.IsNullOrEmpty(timestamp) && !string.IsNullOrEmpty(nonce))
+        {
+            // 可以检测时间是否超时
+            if (CheckTimeOut(timestamp))
+            {
+                // 检测签名的合法性
+                if (CheckSignature(token, signature, timestamp, nonce))
+                {
+                    result = "我是测试数据";
+                }
+            }
+        }
+        return result;
+    }
 	{% endhighlight %}
-
+	
     private bool CheckTimeOut(string timestamp)
     {
         var result = default(bool);
