@@ -12,6 +12,12 @@ layout: default
 	{{ content }}
 	</div>
 	<div class="post-time-line">
+		分类：<span class="post-time-line-categories">{{ post.categories }}</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+		标签：
+		{% for tag in post.tags %}
+			<span class="post-time-line-tag">{{ tag }}</span>
+		{% endfor %}
+		&nbsp;&nbsp;|&nbsp;&nbsp;
 		<time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
 	</div>
 	{% include comments.md %}

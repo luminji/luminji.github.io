@@ -24,6 +24,15 @@ body {
 	text-align: right;
 	color: #666666;
 }
+.post-time-line-categories{
+	color: #990033;
+}
+.post-time-line-tag{
+	margin: 0px 2px;
+	padding: 0px 5px;
+	border: 1px dashed #E7A466;
+	color: #7b7368;
+}
 .post-content{
 	margin-top: 30px;
 }
@@ -49,10 +58,10 @@ body {
 	text-align: right;
 	color: #666666;
 }
-.post-time-line-categories{
+.page-time-line-categories{
 	color: #990033;
 }
-.post-time-line-tag{
+.page-time-line-tag{
 	margin: 0px 2px;
 	padding: 0px 5px;
 	border: 1px dashed #E7A466;
