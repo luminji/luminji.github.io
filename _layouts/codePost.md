@@ -15,8 +15,13 @@
     <script src="/js/jquery-2.1.1.min.js"></script>
     <script src="/bootstrap-3.0.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter_3.0.83/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter_3.0.83/scripts/shBrushPython.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
 	<script type="text/javascript" src="/syntaxhighlighter_3.0.83/scripts/shBrushCSharp.js"></script>
-	<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
     <script type="text/javascript">
 		$(function () {
 			$('#nav1').addClass('active');
