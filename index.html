@@ -13,6 +13,11 @@ layout: page
 			<a class="page-title" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 			<p class="page-description">{{ post.description }}...<a class="page-more" href="{{ post.url }}">阅读全文</a></p>
 			<div class="page-time-line">
+				分类：<span class="post-time-line-categories">{{ page.categories }}</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+				标签：
+				{% for tag in page.tags %}
+					<span>{{ tag }}</span>
+				&nbsp;&nbsp;|&nbsp;&nbsp;
 				<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
 			</div>
 		</div>
