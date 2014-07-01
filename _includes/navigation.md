@@ -17,6 +17,7 @@
         <li><a href="http://jekyllrb.com">Jekyll</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li id='nav4'><a href="/msgboard/">留言板</a></li>
         <li id='nav3'><a href="/about/">关于</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接<b class="caret"></b></a>
