@@ -13,11 +13,10 @@
       <ul class="nav navbar-nav" id="navbar-nav">
         <li id='nav1'><a href="/">文章</a></li>
         <li id='nav2'><a href="/case/">成功案例</a></li>
-        <li><a href="https://github.com/WangWenzhuang/wangwenzhuang.github.io">GitHub</a></li>
-        <li><a href="http://jekyllrb.com">Jekyll</a></li>
+        <li><a href="https://github.com/WangWenzhuang">GitHub</a></li>
+        <li id='nav4'><a href="/msgboard/">留言板</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li id='nav4'><a href="/msgboard/">留言板</a></li>
         <li id='nav3'><a href="/about/">关于</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">友情链接<b class="caret"></b></a>
