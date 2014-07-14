@@ -1,7 +1,7 @@
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
-url: http://www.wangwenzhuang.com
-author: 王文壮
+url: http://blog.tminji.com
+author: 陆敏技
 encoding: utf-8
 paginate: 20
 paginate_path: "page:num"
